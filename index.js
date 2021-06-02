@@ -18,4 +18,14 @@ class CocktailsAdapter {
     };
     return fetch(this.cocktailUrl, cocktailCreateParams).then(res => res.json());
   }
+
+  deleteCocktail(cocktailId) {
+    const cocktailDeleteParams = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    return fetch(`${this.cocktailUrl}/${cocktailId}`, cocktailDeleteParams).then(res => res.json());
+  }
 }
