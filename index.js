@@ -33,8 +33,7 @@ class CocktailsAdapter {
 
   deleteCocktail(cocktailId) {
     const cocktailDeleteParams = {
-      method: "DELETE",
-      body: null
+      method: "DELETE"
     };
     return fetch(`${this.cocktailUrl}/${cocktailId}`, cocktailDeleteParams);
   }
