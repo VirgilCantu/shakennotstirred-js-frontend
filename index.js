@@ -34,10 +34,8 @@ class CocktailsAdapter {
   deleteCocktail(cocktailId) {
     const cocktailDeleteParams = {
       method: "DELETE",
-      headers: {
-        "Content-Type": "application/json"
-      }
+      body: null
     };
-    return fetch(`${this.cocktailUrl}/${cocktailId}`, cocktailDeleteParams).then(res => res.json());
+    return fetch(`${this.cocktailUrl}/${cocktailId}`, cocktailDeleteParams);
   }
 }
