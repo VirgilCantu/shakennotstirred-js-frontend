@@ -19,6 +19,18 @@ class CocktailsAdapter {
     return fetch(this.cocktailUrl, cocktailCreateParams).then(res => res.json());
   }
 
+  editCocktail(body, cocktailId) {
+    const cocktailEditParams = {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(body)
+    };
+    return fetch(`${this.cocktailUrl}/${cocktailId}`, cocktailEditParams).then(res => res.json());
+  }
+
   deleteCocktail(cocktailId) {
     const cocktailDeleteParams = {
       method: "DELETE",
