@@ -10,7 +10,8 @@ class Cocktails {
     this.cocktailsNode = document.getElementById("current-cocktails");
     this.createButton = document.getElementById("create-cocktail");
     this.cocktailsForm = document.getElementById("new-cocktail-form");
-    this.createButton.addEventListener("click", this.showHideForm());
+    this.cocktailsForm.style.display = "none";
+    this.createButton.addEventListener("click", this.showHideForm.bind(this));
   }
 
   fetchAndLoadCocktails() {
@@ -26,5 +27,11 @@ class Cocktails {
       });
   }
 
-  showHideForm() {}
+  showHideForm() {
+    if (this.cocktailsForm.style.display === "none") {
+      this.cocktailsForm.style.display = "block";
+    } else if (this.cocktailsForm.style.display === "block") {
+      this.cocktailsForm.style.display = "none";
+    }
+  }
 }
