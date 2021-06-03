@@ -5,7 +5,7 @@ class Cocktail {
     this.glassware = cocktailJSON.glassware;
     this.ice = cocktailJSON.ice;
     this.origin = cocktailJSON.origin;
-    this.prep = cocktailJSON.preparation;
+    this.preparation = cocktailJSON.preparation;
   }
 
   buildCard(cocktail) {
@@ -32,9 +32,9 @@ class Cocktail {
     origin.innerHTML = `Origin: ${cocktail.origin}`;
     cocktailDiv.appendChild(origin);
 
-    const prep = document.createElement("p");
-    prep.innerHTML = `Preparation: ${cocktail.prep}`;
-    cocktailDiv.appendChild(prep);
+    const preparation = document.createElement("p");
+    preparation.innerHTML = `Preparation: ${cocktail.preparation}`;
+    cocktailDiv.appendChild(preparation);
 
     this.cocktailsNode.appendChild(cocktailDiv);
   }
