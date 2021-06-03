@@ -41,14 +41,17 @@ class CocktailsAdapter {
 
 class Cocktails {
   constructor() {
-    this.adapter = new CocktailsAdapter();
+    this.cocktailList = [];
+    this.initBindingsAndEventListeners();
     this.fetchAndLoadCocktails();
-    this.createCocktailIndex();
+    this.adapter = new CocktailsAdapter();
+  }
+
+  initBindingsAndEventListeners() {
+    this.cocktailsNode = document.getElementById("current-cocktails");
   }
 
   fetchAndLoadCocktails() {
-    this.cocktailList = [];
-
     this.adapter.getCocktails().then(json => {
       json.forEach(obj => {
         this.cocktailList.push(obj);
@@ -57,7 +60,6 @@ class Cocktails {
   }
 
   createCocktailIndex() {
-    const cocktails = document.getElementById("current-cocktails");
     cocktails.className = "cocktail_div";
     this.cocktailList.forEach(cocktail => {
       const div = document.createElement("div");
