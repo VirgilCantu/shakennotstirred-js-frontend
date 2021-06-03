@@ -50,6 +50,7 @@ class Cocktails {
   fetchAndLoadCocktails() {
     this.adapter.getCocktails().then(json => {
       const cocktails = document.getElementById("current-cocktails");
+      cocktails.className = "cocktail_div";
       json.forEach(obj => {
         const div = document.createElement("div");
         div.id = `cocktail-${obj.id}`;
@@ -57,11 +58,11 @@ class Cocktails {
 
         const image = document.createElement("img");
         image.src = obj.image;
-        image.className = "cocktail";
+        image.className = "cocktail_img";
         div.appendChild(image);
 
         const name = document.createElement("h3");
-        name.innerHTML = obj.name;
+        name.innerHTML = `<strong>${obj.name}</strong>`;
         div.appendChild(name);
 
         const glassware = document.createElement("p");

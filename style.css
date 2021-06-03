@@ -1,7 +1,17 @@
-.cocktail {
+.cocktail_img {
   display: inline-block;
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.cocktail_div {
+  height: 1000px;
+  width: 500px;
+  /* background-color:#CCC; */
+  overflow-y: auto;
+  float: left;
+  position: relative;
+  margin-left: -5px;
 }
