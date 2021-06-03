@@ -38,3 +38,12 @@ class CocktailsAdapter {
     return fetch(`${this.cocktailUrl}/${cocktailId}`, cocktailDeleteParams);
   }
 }
+
+class Cocktails {
+  constructor() {
+    this.cocktails = [];
+    this.initEventListeners();
+    this.adapter = new CocktailsAdapter();
+    this.fetchAndLoadCocktails();
+  }
+}
