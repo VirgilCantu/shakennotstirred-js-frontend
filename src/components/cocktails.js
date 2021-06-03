@@ -35,4 +35,8 @@ class Cocktails {
       this.cocktailsForm.style.display = "none";
     }
   }
+
+  handleAddCocktail(event) {
+    const cocktailName = getElementById("");
+  }
 }
