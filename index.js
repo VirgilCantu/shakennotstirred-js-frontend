@@ -55,6 +55,11 @@ class Cocktails {
         div.id = `cocktail-${obj.id}`;
         cocktails.appendChild(div);
 
+        const image = document.createElement("img");
+        image.src = obj.image;
+        image.className = "cocktail";
+        div.appendChild(image);
+
         const name = document.createElement("h3");
         name.innerHTML = obj.name;
         div.appendChild(name);
