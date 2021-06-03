@@ -12,6 +12,7 @@ class Cocktails {
     this.cocktailsForm = document.getElementById("new-cocktail-form");
     this.cocktailsForm.style.display = "none";
     this.createButton.addEventListener("click", this.showHideForm.bind(this));
+    this.cocktailsForm.addEventListener("submit", this.handleAddCocktail.bind(this));
   }
 
   fetchAndLoadCocktails() {
