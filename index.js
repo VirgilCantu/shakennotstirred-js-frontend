@@ -41,9 +41,48 @@ class CocktailsAdapter {
 
 class Cocktails {
   constructor() {
-    this.cocktails = [];
-    this.initEventListeners();
+    // this.cocktails = [];
+    // this.eventListeners();
     this.adapter = new CocktailsAdapter();
     this.fetchAndLoadCocktails();
   }
+
+  fetchAndLoadCocktails() {
+    this.adapter.getCocktails().then(json => {
+      const cocktails = document.getElementById("current-cocktails");
+      json.forEach(obj => {
+        const div = document.createElement("div");
+        div.id = `cocktail-${obj.id}`;
+        cocktails.appendChild(div);
+
+        const name = document.createElement("h3");
+        name.innerHTML = obj.name;
+        div.appendChild(name);
+
+        const glassware = document.createElement("p");
+        glassware.innerHTML = `Glassware: ${obj.glassware}`;
+        div.appendChild(glassware);
+
+        const ice = document.createElement("p");
+        ice.innerHTML = `Ice: ${obj.ice}`;
+        div.appendChild(ice);
+
+        const origin = document.createElement("p");
+        origin.innerHTML = `Origin: ${obj.origin}`;
+        div.appendChild(origin);
+
+        const prep = document.createElement("p");
+        prep.innerHTML = `Preparation: ${obj.preparation}`;
+        div.appendChild(prep);
+      });
+    });
+  }
 }
+
+class App {
+  constructor() {
+    this.notes = new Cocktails();
+  }
+}
+
+const app = new App();
