@@ -37,6 +37,18 @@ class Cocktails {
   }
 
   handleAddCocktail(event) {
-    const cocktailName = getElementById("");
+    event.preventDefault();
+    const cocktailName = document.getElementById("cocktail-name");
+    const cocktailIce = document.getElementById("cocktail-ice");
+    const cocktailOrigin = document.getElementById("cocktail-origin");
+    const cocktailGlassware = document.getElementById("cocktail-glassware");
+    const cocktailPreparation = document.getElementById("cocktail-preparation");
+    const bodyObj = {
+      name: cocktailName.value,
+      ice: cocktailIce.value,
+      origin: cocktailOrigin.value,
+      glassware: cocktailGlassware.value,
+      preparation: cocktailPreparation.value
+    };
   }
 }
