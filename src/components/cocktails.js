@@ -8,6 +8,8 @@ class Cocktails {
 
   initBindingsAndEventListeners() {
     this.cocktailsNode = document.getElementById("current-cocktails");
+    this.createButton = document.getElementById("create-cocktail");
+    this.createButton.addEventListener("click", this.handleAddCocktail());
   }
 
   fetchAndLoadCocktails() {
@@ -22,4 +24,6 @@ class Cocktails {
         this.cocktails.forEach(cocktail => cocktail.buildCard.call(this, cocktail));
       });
   }
+
+  handleAddCocktail() {}
 }
