@@ -11,6 +11,15 @@ class Cocktails {
   }
 
   fetchAndLoadCocktails() {
-    this.adapter.getCocktails().then(cocktailsJSON => cocktailsJSON.forEach(cocktail => this.cocktails.push(new Cocktail(cocktail))));
+    this.adapter
+      .getCocktails()
+      .then(cocktailsJSON => {
+        cocktailsJSON.forEach(cocktail => {
+          this.cocktails.push(new Cocktail(cocktail));
+        });
+      })
+      .then(() => {
+        this.cocktails.forEach(cocktail => cocktail.buildCard.call(this, cocktail));
+      });
   }
 }
