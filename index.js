@@ -81,7 +81,7 @@ class Cocktails {
 
 class App {
   constructor() {
-    this.notes = new Cocktails();
+    this.cocktails = new Cocktails();
   }
 }
 
