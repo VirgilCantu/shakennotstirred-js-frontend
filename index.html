@@ -17,6 +17,16 @@
     <br>
     <h3 class="slideRight">Current Cocktail Database:</h3>
     <div id="current-cocktails" class="cocktail_div slideRight"></div>
+    <form id="new-cocktail-form">
+        <label for="name">Name: <input type="text" name="name" id="name"></label>
+        <label for="ice">Ice: <input type="text" name="ice" id="ice"></label>
+        <label for="origin">Origin: <input type="text" name="origin" id="origin"></label>
+        <label for="glassware">Glassware: <input type="text" name="glassware" id="glassware"></label>
+        <input type="submit" value="Save Cocktail">
+    </form>
+    <label>Preparation: <textarea name="cocktail-preparation"
+            form="new-cocktail-form">Enter text here...</textarea></label>
+    <br>
     <button id="create-cocktail">Create & Add New Cocktail</button>
 
 
