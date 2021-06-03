@@ -29,11 +29,7 @@ class Cocktails {
   }
 
   showHideForm() {
-    if (this.cocktailsForm.style.display === "none") {
-      this.cocktailsForm.style.display = "block";
-    } else if (this.cocktailsForm.style.display === "block") {
-      this.cocktailsForm.style.display = "none";
-    }
+    this.cocktailsForm.style.display === "none" ? (this.cocktailsForm.style.display = "block") : (this.cocktailsForm.style.display = "none");
   }
 
   handleAddCocktail(event) {
@@ -50,5 +46,6 @@ class Cocktails {
       glassware: cocktailGlassware.value,
       preparation: cocktailPreparation.value
     };
+    debugger;
   }
 }
