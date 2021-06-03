@@ -35,12 +35,14 @@ class Cocktails {
   handleAddCocktail(event) {
     event.preventDefault();
     const cocktailName = document.getElementById("cocktail-name");
+    const cocktailImage = document.getElementById("cocktail-image");
     const cocktailIce = document.getElementById("cocktail-ice");
     const cocktailOrigin = document.getElementById("cocktail-origin");
     const cocktailGlassware = document.getElementById("cocktail-glassware");
     const cocktailPreparation = document.getElementById("cocktail-preparation");
     const bodyObj = {
       name: cocktailName.value,
+      image: cocktailImage.value,
       ice: cocktailIce.value,
       origin: cocktailOrigin.value,
       glassware: cocktailGlassware.value,
@@ -52,6 +54,7 @@ class Cocktails {
       .then(cocktailInst => cockltailInst.buildCard(cocktailInst))
       .then(() => {
         cocktailName.value = "";
+        cocktailImage.value = "";
         cocktailIce.value = "";
         cocktailOrigin.value = "";
         cocktailGlassware.value = "";
