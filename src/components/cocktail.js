@@ -33,7 +33,7 @@ class Cocktail {
     cocktailDiv.appendChild(origin);
 
     const prep = document.createElement("p");
-    prep.innerHTML = `Preparation: ${cocktail.preparation}`;
+    prep.innerHTML = `Preparation: ${cocktail.prep}`;
     cocktailDiv.appendChild(prep);
 
     this.cocktailsNode.appendChild(cocktailDiv);
