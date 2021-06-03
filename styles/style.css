@@ -7,11 +7,14 @@
 }
 
 .cocktail_div {
-  height: 1000px;
+  height: 750px;
   width: 500px;
-  /* background-color:#CCC; */
   overflow-y: auto;
   float: left;
   position: relative;
   margin-left: -5px;
+}
+
+.hidden {
+  visibility: hidden;
 }
