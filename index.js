@@ -37,23 +37,6 @@ class CocktailsAdapter {
     };
     return fetch(`${this.cocktailUrl}/${cocktailId}`, cocktailDeleteParams);
   }
-}
-
-class Cocktails {
-  constructor() {
-    this.cocktails = [];
-    this.initBindingsAndEventListeners();
-    this.adapter = new CocktailsAdapter();
-    this.fetchAndLoadCocktails();
-  }
-
-  initBindingsAndEventListeners() {
-    this.cocktailsNode = document.getElementById("current-cocktails");
-  }
-
-  fetchAndLoadCocktails() {
-    this.adapter.getCocktails().then(cocktailsJSON => cocktailsJSON.forEach(cocktail => this.cocktails.push(new Cocktail(cocktail))));
-  }
 
   //   createCocktailIndex() {
   //     const div = document.createElement("div");
@@ -95,12 +78,6 @@ class Cocktail {
     this.ice = cocktailJSON.ice;
     this.origin = cocktailJSON.origin;
     this.prep = cocktailJSON.preparation;
-  }
-}
-
-class App {
-  constructor() {
-    this.cocktails = new Cocktails();
   }
 }
 
