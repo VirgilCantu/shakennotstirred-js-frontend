@@ -46,6 +46,16 @@ class Cocktails {
       glassware: cocktailGlassware.value,
       preparation: cocktailPreparation.value
     };
-    debugger;
+    this.adapter
+      .createCocktail(bodyObj)
+      .then(cocktailJSON => this.cocktails.push(new Cocktail(cocktailJSON)))
+      .then(cocktailInst => cockltailInst.buildCard(cocktailInst))
+      .then(() => {
+        cocktailName.value = "";
+        cocktailIce.value = "";
+        cocktailOrigin.value = "";
+        cocktailGlassware.value = "";
+        cocktailPreparation.value = "";
+      });
   }
 }
