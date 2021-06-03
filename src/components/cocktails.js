@@ -9,7 +9,7 @@ class Cocktails {
   initBindingsAndEventListeners() {
     this.cocktailsNode = document.getElementById("current-cocktails");
     this.createButton = document.getElementById("create-cocktail");
-    this.createButton.addEventListener("click", this.handleAddCocktail());
+    this.createButton.addEventListener("click", this.showHideForm());
   }
 
   fetchAndLoadCocktails() {
@@ -25,5 +25,5 @@ class Cocktails {
       });
   }
 
-  handleAddCocktail() {}
+  showHideForm() {}
 }
