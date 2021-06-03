@@ -43,8 +43,8 @@ class Cocktails {
   constructor() {
     this.cocktailList = [];
     this.initBindingsAndEventListeners();
-    this.fetchAndLoadCocktails();
     this.adapter = new CocktailsAdapter();
+    this.fetchAndLoadCocktails();
   }
 
   initBindingsAndEventListeners() {
@@ -52,11 +52,7 @@ class Cocktails {
   }
 
   fetchAndLoadCocktails() {
-    this.adapter.getCocktails().then(json => {
-      json.forEach(obj => {
-        this.cocktailList.push(obj);
-      });
-    });
+    this.adapter.getCocktails().then(cocktailsJSON => cocktailsJSON.forEach(cocktail => this.cocktailList.push(new Cocktail(cocktail))));
   }
 
   createCocktailIndex() {
