@@ -24,7 +24,7 @@ class Cocktails {
         });
       })
       .then(() => {
-        this.cocktails.forEach(cocktail => cocktail.buildCard.call(this, cocktail));
+        this.cocktails.forEach(cocktail => cocktail.buildCard());
       });
   }
 
@@ -53,7 +53,7 @@ class Cocktails {
       .then(cocktailJSON => {
         const cocktailInstance = new Cocktail(cocktailJSON);
         this.cocktails.push(cocktailInstance);
-        cocktailInstance.buildCard.call(this, cocktailInstance);
+        cocktailInstance.buildCard();
       })
       .then(() => {
         cocktailName.value = "";
