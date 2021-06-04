@@ -13,7 +13,7 @@ class Cocktails {
     this.formInputs = document.querySelectorAll(".new-cocktail-input");
     this.createButton.addEventListener("click", this.showHideForm.bind(this));
     this.cocktailsForm.addEventListener("submit", this.handleAddCocktail.bind(this));
-    this.notesNode.addEventListener("click", this.handleDeleteNote.bind(this));
+    this.notesNode.addEventListener("click", this.handleDeleteCocktail.bind(this));
   }
 
   fetchAndLoadCocktails() {
@@ -67,5 +67,5 @@ class Cocktails {
       });
   }
 
-  handleDeleteNote() {}
+  handleDeleteCocktail() {}
 }
