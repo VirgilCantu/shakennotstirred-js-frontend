@@ -41,7 +41,7 @@ class Cocktail {
 
     const deleteButton = document.createElement("button");
     deleteButton.innerHTML = "X";
-    deleteButton.className = "";
+    deleteButton.className = "delete-button";
     deleteButton.dataset.id = this.id;
     cocktailDiv.appendChild(deleteButton);
 
