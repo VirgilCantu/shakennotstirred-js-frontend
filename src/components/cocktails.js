@@ -41,12 +41,6 @@ class Cocktails {
     event.preventDefault();
     const formInputs = document.getElementsByClassName("new-cocktail-input");
     const [name, image, ice, origin, glassware, preparation] = formInputs;
-    // const name = document.getElementById("cocktail-name");
-    // const image = document.getElementById("cocktail-image");
-    // const ice = document.getElementById("cocktail-ice");
-    // const origin = document.getElementById("cocktail-origin");
-    // const glassware = document.getElementById("cocktail-glassware");
-    // const preparation = document.getElementById("cocktail-preparation");
     const bodyObj = {
       name: name.value,
       image: image.value,
@@ -63,12 +57,12 @@ class Cocktails {
         cocktailInstance.buildCard();
       })
       .then(() => {
-        cocktailName.value = "";
-        cocktailImage.value = "";
-        cocktailIce.value = "";
-        cocktailOrigin.value = "";
-        cocktailGlassware.value = "";
-        cocktailPreparation.value = "";
+        name.value = "";
+        image.value = "";
+        ice.value = "";
+        origin.value = "";
+        glassware.value = "";
+        preparation.value = "";
       });
   }
 }
