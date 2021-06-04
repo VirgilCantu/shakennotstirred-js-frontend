@@ -16,7 +16,7 @@ class Cocktails {
     this.ingredientsForm.style.display = "none";
     this.ingredientCreateButton.style.display = "none";
     this.formInputs = document.querySelectorAll(".new-cocktail-input");
-    this.cocktailCreateButton.addEventListener("click", this.showHideForm);
+    this.cocktailCreateButton.addEventListener("click", this.showHideCocktailForm);
     this.cocktailsForm.addEventListener("submit", this.handleAddCocktail.bind(this));
     this.cocktailsContainer.addEventListener("click", this.handleDeleteCocktail.bind(this));
   }
@@ -34,16 +34,14 @@ class Cocktails {
       });
   }
 
-  showHideForm = () => {
+  showHideCocktailForm = () => {
     if (this.cocktailsForm.style.display === "none") {
       this.cocktailsForm.style.display = "block";
       this.cocktailCreateButton.innerHTML = "Close";
-      this.ingredientsForm.style.display = "block";
       this.ingredientCreateButton.style.display = "";
     } else {
       this.cocktailsForm.style.display = "none";
       this.cocktailCreateButton.innerHTML = "Add New Cocktail";
-      this.ingredientsForm.style.display = "none";
       this.ingredientCreateButton.style.display = "none";
     }
   };
