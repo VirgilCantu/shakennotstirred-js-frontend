@@ -9,6 +9,7 @@ class Cocktails {
   initBindingsAndEventListeners() {
     this.createButton = document.getElementById("create-cocktail-button");
     this.cocktailsForm = document.getElementById("new-cocktail-form");
+    this.formInputs = document.getElementsByClassName("new-cocktail-input");
     this.cocktailsForm.style.display = "none";
     this.createButton.addEventListener("click", this.showHideForm.bind(this));
     this.cocktailsForm.addEventListener("submit", this.handleAddCocktail.bind(this));
@@ -39,8 +40,7 @@ class Cocktails {
 
   handleAddCocktail(event) {
     event.preventDefault();
-    const formInputs = document.getElementsByClassName("new-cocktail-input");
-    const [name, image, ice, origin, glassware, preparation] = formInputs;
+    const [name, image, ice, origin, glassware, preparation] = this.formInputs;
     const bodyObj = {
       name: name.value,
       image: image.value,
