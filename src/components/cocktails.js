@@ -9,6 +9,8 @@ class Cocktails {
   initBindingsAndEventListeners() {
     this.cocktailCreateButton = document.getElementById("create-cocktail-button");
     this.cocktailsForm = document.getElementById("new-cocktail-form");
+    this.ingredientCreateButton = document.getElementById("create-ingredient-button");
+    this.ingredientsForm = document.getElementById("new-ingredient-form");
     this.cocktailsContainer = document.getElementById("current-cocktails");
     this.cocktailsForm.style.display = "none";
     this.formInputs = document.querySelectorAll(".new-cocktail-input");
