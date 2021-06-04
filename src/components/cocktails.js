@@ -38,9 +38,13 @@ class Cocktails {
     if (this.cocktailsForm.style.display === "none") {
       this.cocktailsForm.style.display = "block";
       this.cocktailCreateButton.innerHTML = "Close";
+      this.ingredientsForm.style.display = "block";
+      this.ingredientCreateButton.style.display = "";
     } else {
       this.cocktailsForm.style.display = "none";
       this.cocktailCreateButton.innerHTML = "Add New Cocktail";
+      this.ingredientsForm.style.display = "none";
+      this.ingredientCreateButton.style.display = "none";
     }
   };
 
