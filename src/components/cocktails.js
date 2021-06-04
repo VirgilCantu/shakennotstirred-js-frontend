@@ -66,4 +66,6 @@ class Cocktails {
         preparation.value = "";
       });
   }
+
+  handleDeleteNote() {}
 }
