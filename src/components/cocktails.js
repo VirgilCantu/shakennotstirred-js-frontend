@@ -39,19 +39,21 @@ class Cocktails {
 
   handleAddCocktail(event) {
     event.preventDefault();
-    const cocktailName = document.getElementById("cocktail-name");
-    const cocktailImage = document.getElementById("cocktail-image");
-    const cocktailIce = document.getElementById("cocktail-ice");
-    const cocktailOrigin = document.getElementById("cocktail-origin");
-    const cocktailGlassware = document.getElementById("cocktail-glassware");
-    const cocktailPreparation = document.getElementById("cocktail-preparation");
+    const formInputs = document.getElementsByClassName("new-cocktail-input");
+    const [name, image, ice, origin, glassware, preparation] = formInputs;
+    // const name = document.getElementById("cocktail-name");
+    // const image = document.getElementById("cocktail-image");
+    // const ice = document.getElementById("cocktail-ice");
+    // const origin = document.getElementById("cocktail-origin");
+    // const glassware = document.getElementById("cocktail-glassware");
+    // const preparation = document.getElementById("cocktail-preparation");
     const bodyObj = {
-      name: cocktailName.value,
-      image: cocktailImage.value,
-      ice: cocktailIce.value,
-      origin: cocktailOrigin.value,
-      glassware: cocktailGlassware.value,
-      preparation: cocktailPreparation.value
+      name: name.value,
+      image: image.value,
+      ice: ice.value,
+      origin: origin.value,
+      glassware: glassware.value,
+      preparation: preparation.value
     };
     this.adapter
       .createCocktail(bodyObj)
