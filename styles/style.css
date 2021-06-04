@@ -12,7 +12,7 @@
 
 .card {
   text-align: center;
-  border: grey solid 1px;
+  border: rgb(187, 167, 52) solid 2px;
   padding: 2rem;
   width: 17rem;
   height: 55rem;
@@ -41,4 +41,8 @@ body {
   color: whitesmoke;
   font-size: 18px;
   justify-self: center;
+}
+
+p {
+  line-height: 20px;
 }
