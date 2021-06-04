@@ -12,7 +12,7 @@ class Cocktails {
     this.cocktailsNode = document.getElementById("current-cocktails");
     this.cocktailsForm.style.display = "none";
     this.formInputs = document.querySelectorAll(".new-cocktail-input");
-    this.createButton.addEventListener("click", this.showHideForm.bind(this));
+    this.createButton.addEventListener("click", this.showHideForm);
     this.cocktailsForm.addEventListener("submit", this.handleAddCocktail.bind(this));
     this.cocktailsNode.addEventListener("click", this.handleDeleteCocktail.bind(this));
   }
@@ -30,7 +30,7 @@ class Cocktails {
       });
   }
 
-  showHideForm() {
+  showHideForm = () => {
     if (this.cocktailsForm.style.display === "none") {
       this.cocktailsForm.style.display = "block";
       this.createButton.innerHTML = "Close";
@@ -38,7 +38,7 @@ class Cocktails {
       this.cocktailsForm.style.display = "none";
       this.createButton.innerHTML = "Add New Cocktail";
     }
-  }
+  };
 
   handleAddCocktail(event) {
     event.preventDefault();
@@ -71,7 +71,12 @@ class Cocktails {
   handleDeleteCocktail(event) {
     if (event.target.dataset.action === "delete-cocktail") {
       const cocktailId = event.target.dataset.id;
-      this.adapter.deleteCocktail(cocktailId);
+      this.adapter.deleteCocktail(cocktailId).then(response => this.removeDeletedCocktail(response));
     }
+  }
+
+  removeDeletedCocktail(deleteResponse) {
+    this.cocktails = this.cocktails.filter(cocktail => cocktail.id !== deleteResponse.id);
+    this.cocktailsNode.lastElementChild.remove();
   }
 }
