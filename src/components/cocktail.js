@@ -17,7 +17,7 @@ class Cocktail {
     image.className = "cocktail_img";
     cocktailDiv.appendChild(image);
 
-    const name = document.createElement("h3");
+    const name = document.createElement("h2");
     name.innerHTML = `<strong>${this.name}</strong>`;
     cocktailDiv.appendChild(name);
 
