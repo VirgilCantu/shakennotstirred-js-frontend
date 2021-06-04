@@ -13,6 +13,8 @@ class Cocktails {
     this.ingredientsForm = document.getElementById("new-ingredient-form");
     this.cocktailsContainer = document.getElementById("current-cocktails");
     this.cocktailsForm.style.display = "none";
+    this.ingredientsForm.style.display = "none";
+    this.ingredientCreateButton.style.display = "none";
     this.formInputs = document.querySelectorAll(".new-cocktail-input");
     this.cocktailCreateButton.addEventListener("click", this.showHideForm);
     this.cocktailsForm.addEventListener("submit", this.handleAddCocktail.bind(this));
