@@ -1,3 +1,7 @@
 class Ingredients {
-  constructor() {}
+  constructor() {
+    this.importantNodes();
+  }
+
+  importantNodes() {}
 }
