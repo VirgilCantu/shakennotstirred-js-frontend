@@ -1,5 +1,6 @@
 class Cocktail {
   constructor(cocktailJSON) {
+    this.id = cocktailJSON.id;
     this.name = cocktailJSON.name;
     this.image = cocktailJSON.image;
     this.glassware = cocktailJSON.glassware;
