@@ -31,7 +31,7 @@ body {
   text-align: center;
 }
 
-#create-cocktail-button {
+.create-buttons {
   position: relative;
   background-color: #0a5c15;
   border: none;
