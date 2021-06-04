@@ -10,6 +10,7 @@ class Cocktail {
 
   buildCard() {
     const cocktailDiv = document.createElement("div");
+    cocktailDiv.className = "card";
 
     const image = document.createElement("img");
     image.src = this.image;

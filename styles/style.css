@@ -1,9 +1,11 @@
 .cocktail_img {
   display: inline-block;
-  width: 125px;
-  height: 125px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cocktail_div {
@@ -17,4 +19,15 @@
   padding-left: 20px;
   padding-top: 20px;
   border-style: solid;
+}
+
+.card {
+  text-align: center;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 20rem;
+  height: 40rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
+  box-shadow: 6px 8px #0a5c15;
 }
