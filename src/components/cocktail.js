@@ -7,6 +7,7 @@ class Cocktail {
     this.ice = cocktailJSON.ice;
     this.origin = cocktailJSON.origin;
     this.preparation = cocktailJSON.preparation;
+    this.ingredients = cocktailJSON.ingredients;
     this.cocktailsContainer = document.getElementById("current-cocktails");
   }
 
@@ -34,6 +35,14 @@ class Cocktail {
     const origin = document.createElement("p");
     origin.innerHTML = `Origin: ${this.origin}`;
     cocktailDiv.appendChild(origin);
+
+    const ingredientsList = document.createElement("ul");
+    this.ingredients.forEach(ing => {
+      const ingredient = document.createElement("li");
+      ingredient.innerHTML = `${ing.name} - ${ing.quantity}`;
+      ingredientsList.appendChild(ingredient);
+    });
+    cocktailDiv.appendChild(ingredientsList);
 
     const preparation = document.createElement("p");
     preparation.innerHTML = `Preparation: ${this.preparation}`;
