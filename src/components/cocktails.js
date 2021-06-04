@@ -9,11 +9,11 @@ class Cocktails {
   initBindingsAndEventListeners() {
     this.createButton = document.getElementById("create-cocktail-button");
     this.cocktailsForm = document.getElementById("new-cocktail-form");
-    this.formInputs = document.getElementsByClassName("new-cocktail-input");
     this.cocktailsForm.style.display = "none";
+    this.formInputs = document.querySelectorAll(".new-cocktail-input");
     this.createButton.addEventListener("click", this.showHideForm.bind(this));
     this.cocktailsForm.addEventListener("submit", this.handleAddCocktail.bind(this));
-    this.formInputs.forEach(input => input.addEventListener("click", this.handleDeleteCocktail()));
+    this.notesNode.addEventListener("click", this.handleDeleteNote.bind(this));
   }
 
   fetchAndLoadCocktails() {
