@@ -6,6 +6,9 @@
   object-fit: cover;
   margin-left: auto;
   margin-right: auto;
+  border-style: solid;
+  border-width: medium;
+  border-color: #0a5c15;
 }
 
 .cocktail_div {
