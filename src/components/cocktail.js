@@ -38,6 +38,11 @@ class Cocktail {
     preparation.innerHTML = `Preparation: ${this.preparation}`;
     cocktailDiv.appendChild(preparation);
 
+    const deleteButton = document.createElement("button");
+    deleteButton.innerHTML = "X";
+    deleteButton.className = "";
+    cocktailDiv.appendChild(deleteButton);
+
     this.cocktailsContainer.appendChild(cocktailDiv);
   }
 }

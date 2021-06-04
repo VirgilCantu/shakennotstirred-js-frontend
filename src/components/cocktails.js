@@ -7,7 +7,7 @@ class Cocktails {
   }
 
   initBindingsAndEventListeners() {
-    this.createButton = document.getElementById("create-cocktail");
+    this.createButton = document.getElementById("create-cocktail-button");
     this.cocktailsForm = document.getElementById("new-cocktail-form");
     this.cocktailsForm.style.display = "none";
     this.createButton.addEventListener("click", this.showHideForm.bind(this));
