@@ -4,11 +4,10 @@
   height: 205px;
   border-radius: 50%;
   object-fit: cover;
-  margin-left: auto;
-  margin-right: auto;
   border-style: solid;
   border-width: medium;
   border-color: #0a5c15;
+  justify-self: center;
 }
 
 .card {
@@ -30,4 +29,16 @@ body {
 
 .heading {
   text-align: center;
+}
+
+button {
+  position: relative;
+  background-color: #0a5c15;
+  border: none;
+  border-radius: 5px;
+  height: 3rem;
+  width: max-content;
+  color: whitesmoke;
+  font-size: 18px;
+  justify-self: center;
 }
