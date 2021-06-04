@@ -1,7 +1,7 @@
 .cocktail_img {
   display: inline-block;
-  width: 205px;
-  height: 205px;
+  width: 210px;
+  height: 210px;
   border-radius: 50%;
   object-fit: cover;
   border-style: solid;
@@ -45,4 +45,9 @@ body {
 
 p {
   line-height: 20px;
+  margin-top: 20px;
+}
+
+h1 {
+  margin-bottom: 10px;
 }

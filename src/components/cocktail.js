@@ -20,7 +20,7 @@ class Cocktail {
     image.className = "cocktail_img";
     cocktailDiv.appendChild(image);
 
-    const name = document.createElement("h2");
+    const name = document.createElement("h1");
     name.innerHTML = `<em><strong>${this.name}</strong></em>`;
     cocktailDiv.appendChild(name);
 
