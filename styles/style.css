@@ -11,7 +11,7 @@
   border-color: #0a5c15;
 }
 
-.cocktail_div {
+/* .cocktail_div {
   height: 600px;
   width: 500px;
   overflow-y: auto;
@@ -22,13 +22,13 @@
   padding-left: 20px;
   padding-top: 20px;
   border-style: solid;
-}
+} */
 
 .card {
   text-align: center;
   border: grey solid 1px;
-  padding: 1rem;
-  width: 20rem;
+  padding: 2rem;
+  width: 17rem;
   height: 40rem;
   display: inline-grid;
   margin: 1rem 2rem;
@@ -39,4 +39,8 @@ body {
   font-size: 18px;
   line-height: 1.625;
   font-family: "Bodoni 72", Arial, Helvetica, sans-serif;
+}
+
+.heading {
+  text-align: center;
 }
