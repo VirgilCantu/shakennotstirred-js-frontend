@@ -50,8 +50,11 @@ class Cocktails {
     };
     this.adapter
       .createCocktail(bodyObj)
-      .then(cocktailJSON => this.cocktails.push(new Cocktail(cocktailJSON)))
-      .then(cocktailInst => cockltailInst.buildCard(cocktailInst))
+      .then(cocktailJSON => {
+        const cocktailInstance = new Cocktail(cocktailJSON);
+        this.cocktails.push(cocktailInstance);
+        cocktailInstance.buildCard.call(this, cocktailInstance);
+      })
       .then(() => {
         cocktailName.value = "";
         cocktailImage.value = "";
