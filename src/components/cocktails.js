@@ -10,10 +10,8 @@ class Cocktails {
     this.cocktailCreateButton = document.getElementById("create-cocktail-button");
     this.cocktailsForm = document.getElementById("new-cocktail-form");
     this.ingredientCreateButton = document.getElementById("create-ingredient-button");
-    this.ingredientsForm = document.getElementById("new-ingredient-form");
     this.cocktailsContainer = document.getElementById("current-cocktails");
     this.cocktailsForm.style.display = "none";
-    this.ingredientsForm.style.display = "none";
     this.ingredientCreateButton.style.display = "none";
     this.formInputs = document.querySelectorAll(".new-cocktail-input");
     this.cocktailCreateButton.addEventListener("click", this.showHideCocktailForm);
@@ -39,12 +37,16 @@ class Cocktails {
       this.cocktailsForm.style.display = "block";
       this.cocktailCreateButton.innerHTML = "Close";
       this.ingredientCreateButton.style.display = "";
+      this.ingredientCreateButton.addEventListener("click", this.addRemoveIngredientsForms);
     } else {
       this.cocktailsForm.style.display = "none";
       this.cocktailCreateButton.innerHTML = "Add New Cocktail";
       this.ingredientCreateButton.style.display = "none";
+      this.ingredientCreateButton.removeEventListener("click", this.addRemoveIngredientsForms);
     }
   };
+
+  addRemoveIngredientsForms = () => {};
 
   handleAddCocktail(event) {
     event.preventDefault();
