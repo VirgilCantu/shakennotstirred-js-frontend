@@ -37,16 +37,69 @@ class Cocktails {
       this.cocktailsForm.style.display = "block";
       this.cocktailCreateButton.innerHTML = "Close";
       this.ingredientCreateButton.style.display = "";
-      this.ingredientCreateButton.addEventListener("click", this.addRemoveIngredientsForms);
+      this.ingredientCreateButton.addEventListener("click", this.addIngredientField);
     } else {
       this.cocktailsForm.style.display = "none";
       this.cocktailCreateButton.innerHTML = "Add New Cocktail";
       this.ingredientCreateButton.style.display = "none";
-      this.ingredientCreateButton.removeEventListener("click", this.addRemoveIngredientsForms);
+      this.ingredientCreateButton.removeEventListener("click", this.addIngredientField);
     }
   };
 
-  addRemoveIngredientsForms = () => {};
+  addIngredientField = () => {
+    const ingHeading = document.createElement("h2");
+
+    const ingLabelName = document.createElement("label");
+    const ingInputName = document.createElement("input");
+    ingHeading.innerHTML = "New Ingredient for this Cocktail";
+    ingLabelName.for = "name";
+    ingLabelName.innerHTML = "Name: ";
+    ingInputName.type = "text";
+    ingInputName.name = "name";
+    ingInputName.id = "ingredient-name";
+    ingInputName.className = "new-ingredient-input";
+
+    const ingLabelCategory = document.createElement("label");
+    const ingInputCategory = document.createElement("input");
+    ingLabelCategory.for = "category";
+    ingLabelCategory.innerHTML = "Category: ";
+    ingInputCategory.type = "text";
+    ingInputCategory.name = "category";
+    ingInputCategory.id = "ingredient-category";
+    ingInputCategory.className = "new-ingredient-input";
+
+    const ingLabelSubcategory = document.createElement("label");
+    const ingInputSubcategory = document.createElement("input");
+    ingLabelSubcategory.for = "subcategory";
+    ingLabelSubcategory.innerHTML = "Subcategory: ";
+    ingInputSubcategory.type = "text";
+    ingInputSubcategory.name = "subcategory";
+    ingInputSubcategory.id = "ingredient-subcategory";
+    ingInputSubcategory.className = "new-ingredient-input";
+
+    const ingLabelQuantity = document.createElement("label");
+    const ingInputQuantity = document.createElement("input");
+    ingLabelQuantity.for = "quantity";
+    ingLabelQuantity.innerHTML = "Quantity: ";
+    ingInputQuantity.type = "text";
+    ingInputQuantity.name = "quantity";
+    ingInputQuantity.id = "ingredient-quantity";
+    ingInputQuantity.className = "new-ingredient-input";
+
+    this.cocktailsForm.append(ingHeading);
+
+    this.cocktailsForm.append(ingLabelName);
+    this.cocktailsForm.append(ingInputName);
+
+    this.cocktailsForm.append(ingLabelCategory);
+    this.cocktailsForm.append(ingInputCategory);
+
+    this.cocktailsForm.append(ingLabelSubcategory);
+    this.cocktailsForm.append(ingInputSubcategory);
+
+    this.cocktailsForm.append(ingLabelQuantity);
+    this.cocktailsForm.append(ingInputQuantity);
+  };
 
   handleAddCocktail(event) {
     event.preventDefault();
