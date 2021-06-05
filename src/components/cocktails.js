@@ -1,21 +1,24 @@
 class Cocktails {
   constructor() {
     this.cocktails = [];
-    this.initBindingsAndEventListeners();
+    this.initNodes();
+    this.initEventListeners();
     this.adapter = new CocktailsAdapter();
     this.fetchAndLoadCocktails();
   }
-
-  initBindingsAndEventListeners() {
-    this.cocktailCreateButton = document.getElementById("create-cocktail-button");
+  initNodes() {
+    this.cocktailsContainer = document.getElementById("current-cocktails");
     this.cocktailsForm = document.getElementById("new-cocktail-form");
+    this.cocktailCreateButton = document.getElementById("create-cocktail-button");
     this.ingredientCreateButton = document.getElementById("create-ingredient-button");
     this.ingredientDeleteButton = document.getElementById("delete-ingredient-button");
-    this.cocktailsContainer = document.getElementById("current-cocktails");
-    this.cocktailsForm.style.display = "none";
-    this.ingredientDeleteButton.style.display = "none";
-    this.ingredientCreateButton.style.display = "none";
     this.formInputs = document.querySelectorAll(".new-cocktail-input");
+    this.cocktailsForm.style.display = "none";
+    this.ingredientCreateButton.style.display = "none";
+    this.ingredientDeleteButton.style.display = "none";
+  }
+
+  initEventListeners() {
     this.cocktailCreateButton.addEventListener("click", this.showHideCocktailForm);
     this.cocktailsForm.addEventListener("submit", this.handleAddCocktail);
     this.cocktailsContainer.addEventListener("click", this.handleDeleteCocktail);
