@@ -90,9 +90,6 @@ class Cocktails {
     this.cocktailsForm.appendChild(ingLabelCategory);
     this.cocktailsForm.appendChild(ingInputCategory);
 
-    this.cocktailsForm.appendChild(ingLabelSubcategory);
-    this.cocktailsForm.appendChild(ingInputSubcategory);
-
     this.cocktailsForm.appendChild(ingLabelQuantity);
     this.cocktailsForm.appendChild(ingInputQuantity);
 
