@@ -155,6 +155,7 @@ class Cocktails {
     if (event.target.dataset.action === "delete-cocktail") {
       const cocktailId = event.target.dataset.id;
       this.adapter.deleteCocktail(cocktailId);
+      event.target.parentElement.remove();
     }
   };
 }
