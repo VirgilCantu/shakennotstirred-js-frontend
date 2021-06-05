@@ -59,7 +59,7 @@ class Cocktails {
     ingInputName.type = "text";
     ingInputName.name = "name";
     ingInputName.id = "ingredient-name";
-    ingInputName.className = "new-ingredient-input";
+    ingInputName.className = "new-cocktail-input";
 
     const ingLabelCategory = document.createElement("label");
     const ingInputCategory = document.createElement("input");
@@ -68,7 +68,7 @@ class Cocktails {
     ingInputCategory.type = "text";
     ingInputCategory.name = "category";
     ingInputCategory.id = "ingredient-category";
-    ingInputCategory.className = "new-ingredient-input";
+    ingInputCategory.className = "new-cocktail-input";
 
     const ingLabelSubcategory = document.createElement("label");
     const ingInputSubcategory = document.createElement("input");
@@ -77,7 +77,7 @@ class Cocktails {
     ingInputSubcategory.type = "text";
     ingInputSubcategory.name = "subcategory";
     ingInputSubcategory.id = "ingredient-subcategory";
-    ingInputSubcategory.className = "new-ingredient-input";
+    ingInputSubcategory.className = "new-cocktail-input";
 
     const ingLabelQuantity = document.createElement("label");
     const ingInputQuantity = document.createElement("input");
@@ -86,21 +86,21 @@ class Cocktails {
     ingInputQuantity.type = "text";
     ingInputQuantity.name = "quantity";
     ingInputQuantity.id = "ingredient-quantity";
-    ingInputQuantity.className = "new-ingredient-input";
+    ingInputQuantity.className = "new-cocktail-input";
 
-    this.cocktailsForm.append(ingHeading);
+    this.cocktailsForm.appendChild(ingHeading);
 
-    this.cocktailsForm.append(ingLabelName);
-    this.cocktailsForm.append(ingInputName);
+    this.cocktailsForm.appendChild(ingLabelName);
+    this.cocktailsForm.appendChild(ingInputName);
 
-    this.cocktailsForm.append(ingLabelCategory);
-    this.cocktailsForm.append(ingInputCategory);
+    this.cocktailsForm.appendChild(ingLabelCategory);
+    this.cocktailsForm.appendChild(ingInputCategory);
 
-    this.cocktailsForm.append(ingLabelSubcategory);
-    this.cocktailsForm.append(ingInputSubcategory);
+    this.cocktailsForm.appendChild(ingLabelSubcategory);
+    this.cocktailsForm.appendChild(ingInputSubcategory);
 
-    this.cocktailsForm.append(ingLabelQuantity);
-    this.cocktailsForm.append(ingInputQuantity);
+    this.cocktailsForm.appendChild(ingLabelQuantity);
+    this.cocktailsForm.appendChild(ingInputQuantity);
 
     if ((this.ingredientDeleteButton.style.display = "none")) {
       this.addDeleteIngredientButton();
@@ -112,6 +112,7 @@ class Cocktails {
   }
 
   handleAddCocktail(event) {
+    debugger;
     event.preventDefault();
     const [name, image, ice, origin, glassware, preparation] = this.formInputs;
     const bodyObj = {
