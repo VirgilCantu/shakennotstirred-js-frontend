@@ -73,15 +73,6 @@ class Cocktails {
     ingInputCategory.id = "ingredient-category";
     ingInputCategory.className = "new-cocktail-input";
 
-    const ingLabelSubcategory = document.createElement("label");
-    const ingInputSubcategory = document.createElement("input");
-    ingLabelSubcategory.for = "subcategory";
-    ingLabelSubcategory.innerHTML = "Subcategory: ";
-    ingInputSubcategory.type = "text";
-    ingInputSubcategory.name = "subcategory";
-    ingInputSubcategory.id = "ingredient-subcategory";
-    ingInputSubcategory.className = "new-cocktail-input";
-
     const ingLabelQuantity = document.createElement("label");
     const ingInputQuantity = document.createElement("input");
     ingLabelQuantity.for = "quantity";
