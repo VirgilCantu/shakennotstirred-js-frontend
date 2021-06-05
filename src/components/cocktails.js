@@ -101,6 +101,11 @@ class Cocktails {
 
     this.cocktailsForm.append(ingLabelQuantity);
     this.cocktailsForm.append(ingInputQuantity);
+
+    if (this.ingredientDeleteButton.style.display === "none") {
+      this.ingredientDeleteButton.style.display = "";
+      this.ingredientDeleteButton.addEventListener("click", this.removeIngredientField());
+    }
   };
 
   handleAddCocktail(event) {
