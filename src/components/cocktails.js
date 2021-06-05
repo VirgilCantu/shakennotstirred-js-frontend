@@ -61,7 +61,7 @@ class Cocktails {
     ingInputName.type = "text";
     ingInputName.name = "ingredient_name";
     ingInputName.id = "ingredient_name";
-    ingInputName.className = "new-cocktail-input";
+    ingInputName.className = "new-ingredient-input";
 
     const ingLabelCategory = document.createElement("label");
     const ingInputCategory = document.createElement("input");
@@ -70,7 +70,7 @@ class Cocktails {
     ingInputCategory.type = "text";
     ingInputCategory.name = "ingredient_category";
     ingInputCategory.id = "ingredient_category";
-    ingInputCategory.className = "new-cocktail-input";
+    ingInputCategory.className = "new-ingredient-input";
 
     const ingLabelQuantity = document.createElement("label");
     const ingInputQuantity = document.createElement("input");
@@ -79,7 +79,7 @@ class Cocktails {
     ingInputQuantity.type = "text";
     ingInputQuantity.name = "ingredient_quantity";
     ingInputQuantity.id = "ingredient_quantity";
-    ingInputQuantity.className = "new-cocktail-input";
+    ingInputQuantity.className = "new-ingredient-input";
 
     this.cocktailsForm.appendChild(ingHeading);
 
@@ -104,8 +104,8 @@ class Cocktails {
   handleAddCocktail = event => {
     event.preventDefault();
     this.formInputs = document.querySelectorAll(".new-cocktail-input");
-    debugger;
     const [name, image, ice, origin, glassware, preparation] = this.formInputs;
+    debugger;
     const bodyObj = {
       name: name.value,
       image: image.value,
