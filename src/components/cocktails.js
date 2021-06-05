@@ -101,19 +101,39 @@ class Cocktails {
     this.ingredientDeleteButton.style.display = "";
   }
 
+  sortIngredientInputs = inputs => {
+    const ingredientObjects = [];
+    const numOfObjs = inputs.length / 3;
+    for (let i = 0; i < numOfObjs * 3; i += 3) {
+      const newObj = {
+        name: inputs[i].value,
+        category: inputs[i + 1].value,
+        quantity: inputs[i + 2].value
+      };
+      ingredientObjects.push(newObj);
+    }
+    return ingredientObjects;
+  };
+
   handleAddCocktail = event => {
     event.preventDefault();
-    this.cocktailInputs = document.querySelectorAll(".new-cocktail-input");
-    const [name, image, ice, origin, glassware, preparation] = this.cocktailInputs;
-    debugger;
+    const cocktailInputs = document.querySelectorAll(".new-cocktail-input");
+    const ingredientInputs = document.querySelectorAll(".new-ingredient-input");
+
+    const [name, image, ice, origin, glassware, preparation] = cocktailInputs;
+
+    let ingObjs = this.sortIngredientInputs(ingredientInputs);
+
     const bodyObj = {
       name: name.value,
       image: image.value,
       ice: ice.value,
       origin: origin.value,
       glassware: glassware.value,
-      preparation: preparation.value
+      preparation: preparation.value,
+      ingredients_attributes: ingObjs
     };
+
     this.adapter
       .createCocktail(bodyObj)
       .then(cocktailJSON => {

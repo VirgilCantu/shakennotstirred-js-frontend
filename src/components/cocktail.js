@@ -37,6 +37,7 @@ class Cocktail {
     cocktailDiv.appendChild(origin);
 
     const ingredientsList = document.createElement("ul");
+    debugger;
     this.ingredients.forEach(ing => {
       const ingredient = document.createElement("li");
       ingredient.innerHTML = `${ing.name} - ${ing.quantity}`;
