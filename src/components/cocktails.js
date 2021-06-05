@@ -12,7 +12,6 @@ class Cocktails {
     this.cocktailCreateButton = document.getElementById("create-cocktail-button");
     this.ingredientCreateButton = document.getElementById("create-ingredient-button");
     this.ingredientDeleteButton = document.getElementById("delete-ingredient-button");
-    this.formInputs = document.querySelectorAll(".new-cocktail-input");
     this.cocktailsForm.style.display = "none";
     this.ingredientCreateButton.style.display = "none";
     this.ingredientDeleteButton.style.display = "none";
@@ -57,29 +56,29 @@ class Cocktails {
     const ingLabelName = document.createElement("label");
     const ingInputName = document.createElement("input");
     ingHeading.innerHTML = "New Ingredient for this Cocktail";
-    ingLabelName.for = "name";
+    ingLabelName.for = "ingredient_name";
     ingLabelName.innerHTML = "Name: ";
     ingInputName.type = "text";
-    ingInputName.name = "name";
-    ingInputName.id = "ingredient-name";
+    ingInputName.name = "ingredient_name";
+    ingInputName.id = "ingredient_name";
     ingInputName.className = "new-cocktail-input";
 
     const ingLabelCategory = document.createElement("label");
     const ingInputCategory = document.createElement("input");
-    ingLabelCategory.for = "category";
+    ingLabelCategory.for = "ingredient_category";
     ingLabelCategory.innerHTML = "Category: ";
     ingInputCategory.type = "text";
-    ingInputCategory.name = "category";
-    ingInputCategory.id = "ingredient-category";
+    ingInputCategory.name = "ingredient_category";
+    ingInputCategory.id = "ingredient_category";
     ingInputCategory.className = "new-cocktail-input";
 
     const ingLabelQuantity = document.createElement("label");
     const ingInputQuantity = document.createElement("input");
-    ingLabelQuantity.for = "quantity";
+    ingLabelQuantity.for = "ingredient_quantity";
     ingLabelQuantity.innerHTML = "Quantity: ";
     ingInputQuantity.type = "text";
-    ingInputQuantity.name = "quantity";
-    ingInputQuantity.id = "ingredient-quantity";
+    ingInputQuantity.name = "ingredient_quantity";
+    ingInputQuantity.id = "ingredient_quantity";
     ingInputQuantity.className = "new-cocktail-input";
 
     this.cocktailsForm.appendChild(ingHeading);
@@ -104,6 +103,8 @@ class Cocktails {
 
   handleAddCocktail = event => {
     event.preventDefault();
+    this.formInputs = document.querySelectorAll(".new-cocktail-input");
+    debugger;
     const [name, image, ice, origin, glassware, preparation] = this.formInputs;
     const bodyObj = {
       name: name.value,
