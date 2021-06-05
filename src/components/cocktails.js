@@ -154,12 +154,7 @@ class Cocktails {
   handleDeleteCocktail = event => {
     if (event.target.dataset.action === "delete-cocktail") {
       const cocktailId = event.target.dataset.id;
-      this.adapter.deleteCocktail(cocktailId).then(response => this.removeDeletedCocktail(response));
+      this.adapter.deleteCocktail(cocktailId);
     }
   };
-
-  removeDeletedCocktail(deleteResponse) {
-    this.cocktails = this.cocktails.filter(cocktail => cocktail.id !== deleteResponse.id);
-    this.cocktailsContainer.lastElementChild.remove();
-  }
 }
