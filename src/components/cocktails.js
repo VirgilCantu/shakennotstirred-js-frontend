@@ -17,8 +17,8 @@ class Cocktails {
     this.ingredientCreateButton.style.display = "none";
     this.formInputs = document.querySelectorAll(".new-cocktail-input");
     this.cocktailCreateButton.addEventListener("click", this.showHideCocktailForm);
-    this.cocktailsForm.addEventListener("submit", this.handleAddCocktail.bind(this));
-    this.cocktailsContainer.addEventListener("click", this.handleDeleteCocktail.bind(this));
+    this.cocktailsForm.addEventListener("submit", this.handleAddCocktail);
+    this.cocktailsContainer.addEventListener("click", this.handleDeleteCocktail);
   }
 
   fetchAndLoadCocktails() {
@@ -111,8 +111,7 @@ class Cocktails {
     this.ingredientDeleteButton.style.display = "";
   }
 
-  handleAddCocktail(event) {
-    debugger;
+  handleAddCocktail = event => {
     event.preventDefault();
     const [name, image, ice, origin, glassware, preparation] = this.formInputs;
     const bodyObj = {
@@ -138,14 +137,14 @@ class Cocktails {
         glassware.value = "";
         preparation.value = "";
       });
-  }
+  };
 
-  handleDeleteCocktail(event) {
+  handleDeleteCocktail = event => {
     if (event.target.dataset.action === "delete-cocktail") {
       const cocktailId = event.target.dataset.id;
       this.adapter.deleteCocktail(cocktailId).then(response => this.removeDeletedCocktail(response));
     }
-  }
+  };
 
   removeDeletedCocktail(deleteResponse) {
     this.cocktails = this.cocktails.filter(cocktail => cocktail.id !== deleteResponse.id);
