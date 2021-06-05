@@ -103,8 +103,8 @@ class Cocktails {
 
   handleAddCocktail = event => {
     event.preventDefault();
-    this.formInputs = document.querySelectorAll(".new-cocktail-input");
-    const [name, image, ice, origin, glassware, preparation] = this.formInputs;
+    this.cocktailInputs = document.querySelectorAll(".new-cocktail-input");
+    const [name, image, ice, origin, glassware, preparation] = this.cocktailInputs;
     debugger;
     const bodyObj = {
       name: name.value,
