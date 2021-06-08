@@ -21,6 +21,7 @@ class Cocktails {
     this.cocktailCreateButton.addEventListener("click", this.showHideCocktailForm);
     this.cocktailsForm.addEventListener("submit", this.handleAddCocktail);
     this.cocktailsContainer.addEventListener("click", this.handleDeleteCocktail);
+    this.ingredientDeleteButton.addEventListener("click", this.removeIngredientField);
   }
 
   fetchAndLoadCocktails() {
@@ -52,9 +53,11 @@ class Cocktails {
   };
 
   addIngredientField = () => {
+    const fieldDiv = document.createElement("div");
+    fieldDiv.className = "ingredient-div";
+
     const ingHeading = document.createElement("h2");
     ingHeading.innerHTML = "New Ingredient for this Cocktail";
-    this.cocktailsForm.appendChild(ingHeading);
 
     for (let i = 0; i < 3; i++) {
       const ingLabel = document.createElement("label");
@@ -84,13 +87,20 @@ class Cocktails {
           break;
       }
 
-      this.cocktailsForm.appendChild(ingLabel);
-      this.cocktailsForm.appendChild(ingInput);
+      fieldDiv.appendChild(ingHeading);
+      fieldDiv.appendChild(ingLabel);
+      fieldDiv.appendChild(ingInput);
+
+      this.cocktailsForm.appendChild(fieldDiv);
     }
 
     if ((this.ingredientDeleteButton.style.display = "none")) {
       this.ingredientDeleteButton.style.display = "";
     }
+  };
+
+  removeIngredientField = () => {
+    const ingredientInputs = document.querySelectorAll("#new-ingredient-input");
   };
 
   sortIngredientInputs = inputs => {
