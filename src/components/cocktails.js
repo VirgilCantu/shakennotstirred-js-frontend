@@ -46,60 +46,48 @@ class Cocktails {
       this.cocktailsForm.style.display = "none";
       this.cocktailCreateButton.innerHTML = "Add New Cocktail";
       this.ingredientCreateButton.style.display = "none";
+      this.ingredientDeleteButton.style.display = "none";
       this.ingredientCreateButton.removeEventListener("click", this.addIngredientField);
     }
   };
 
   addIngredientField = () => {
     const ingHeading = document.createElement("h2");
-
-    const ingLabelName = document.createElement("label");
-    const ingInputName = document.createElement("input");
     ingHeading.innerHTML = "New Ingredient for this Cocktail";
-    ingLabelName.for = "ingredient_name";
-    ingLabelName.innerHTML = "Name: ";
-    ingInputName.type = "text";
-    ingInputName.name = "ingredient_name";
-    ingInputName.id = "ingredient_name";
-    ingInputName.className = "new-ingredient-input";
-
-    const ingLabelCategory = document.createElement("label");
-    const ingInputCategory = document.createElement("input");
-    ingLabelCategory.for = "ingredient_category";
-    ingLabelCategory.innerHTML = "Category: ";
-    ingInputCategory.type = "text";
-    ingInputCategory.name = "ingredient_category";
-    ingInputCategory.id = "ingredient_category";
-    ingInputCategory.className = "new-ingredient-input";
-
-    const ingLabelQuantity = document.createElement("label");
-    const ingInputQuantity = document.createElement("input");
-    ingLabelQuantity.for = "ingredient_quantity";
-    ingLabelQuantity.innerHTML = "Quantity: ";
-    ingInputQuantity.type = "text";
-    ingInputQuantity.name = "ingredient_quantity";
-    ingInputQuantity.id = "ingredient_quantity";
-    ingInputQuantity.className = "new-ingredient-input";
-
     this.cocktailsForm.appendChild(ingHeading);
 
-    this.cocktailsForm.appendChild(ingLabelName);
-    this.cocktailsForm.appendChild(ingInputName);
+    for (let i = 0; i < 3; i++) {
+      const ingLabel = document.createElement("label");
+      const ingInput = document.createElement("input");
 
-    this.cocktailsForm.appendChild(ingLabelCategory);
-    this.cocktailsForm.appendChild(ingInputCategory);
+      if (i === 0) {
+        ingLabel.for = "ingredient_name";
+        ingLabel.innerHTML = "Name: ";
+        ingInput.name = "ingredient_name";
+        ingInput.id = "ingredient_name";
+      } else if (i === 1) {
+        ingLabel.for = "ingredient_category";
+        ingLabel.innerHTML = "Category: ";
+        ingInput.name = "ingredient_category";
+        ingInput.id = "ingredient_category";
+      } else {
+        ingLabel.for = "ingredient_quantity";
+        ingLabel.innerHTML = "Quantity: ";
+        ingInput.name = "ingredient_quantity";
+        ingInput.id = "ingredient_quantity";
+      }
 
-    this.cocktailsForm.appendChild(ingLabelQuantity);
-    this.cocktailsForm.appendChild(ingInputQuantity);
+      ingInput.type = "text";
+      ingInput.className = "new-ingredient-input";
+
+      this.cocktailsForm.appendChild(ingLabel);
+      this.cocktailsForm.appendChild(ingInput);
+    }
 
     if ((this.ingredientDeleteButton.style.display = "none")) {
-      this.addDeleteIngredientButton();
+      this.ingredientDeleteButton.style.display = "";
     }
   };
-
-  addDeleteIngredientButton() {
-    this.ingredientDeleteButton.style.display = "";
-  }
 
   sortIngredientInputs = inputs => {
     const ingredientObjects = [];
