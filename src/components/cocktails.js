@@ -100,9 +100,12 @@ class Cocktails {
   };
 
   removeIngredientField = () => {
-    const ingredientInputs = document.getElementsByClassName("ingredient-div");
-    if (ingredientInputs.length) {
-      ingredientInputs[ingredientInputs.length - 1].remove();
+    let ingDivs = document.getElementsByClassName("ingredient-div");
+    if (ingDivs.length > 1) {
+      ingDivs[ingDivs.length - 1].remove();
+    } else {
+      ingDivs[ingDivs.length - 1].remove();
+      this.ingredientDeleteButton.style.display = "none";
     }
   };
 
@@ -153,6 +156,12 @@ class Cocktails {
         origin.value = "";
         glassware.value = "";
         preparation.value = "";
+
+        let ingDivs = document.getElementsByClassName("ingredient-div");
+        while (ingDivs.length > 0) {
+          ingDivs[0].parentNode.removeChild(ingDivs[0]);
+        }
+        this.showHideCocktailForm();
       });
   };
 
