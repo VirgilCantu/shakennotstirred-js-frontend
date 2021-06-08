@@ -58,6 +58,7 @@ class Cocktails {
 
     const ingHeading = document.createElement("h2");
     ingHeading.innerHTML = "New Ingredient for this Cocktail";
+    fieldDiv.appendChild(ingHeading);
 
     for (let i = 0; i < 3; i++) {
       const ingLabel = document.createElement("label");
@@ -87,7 +88,6 @@ class Cocktails {
           break;
       }
 
-      fieldDiv.appendChild(ingHeading);
       fieldDiv.appendChild(ingLabel);
       fieldDiv.appendChild(ingInput);
 
@@ -100,7 +100,10 @@ class Cocktails {
   };
 
   removeIngredientField = () => {
-    const ingredientInputs = document.querySelectorAll("#new-ingredient-input");
+    const ingredientInputs = document.getElementsByClassName("ingredient-div");
+    if (!!ingredientInputs.length) {
+      ingredientInputs[ingredientInputs.length - 1].remove();
+    }
   };
 
   sortIngredientInputs = inputs => {
