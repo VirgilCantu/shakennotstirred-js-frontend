@@ -101,7 +101,7 @@ class Cocktails {
 
   removeIngredientField = () => {
     const ingredientInputs = document.getElementsByClassName("ingredient-div");
-    if (!!ingredientInputs.length) {
+    if (ingredientInputs.length) {
       ingredientInputs[ingredientInputs.length - 1].remove();
     }
   };
