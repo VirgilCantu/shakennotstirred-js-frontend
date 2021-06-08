@@ -12,7 +12,7 @@ Shaken Not Stirred is an incredibly simple page to use. Simply browse through th
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/VirgilCantu/shakennotstirred-js-frontend or https://github.com/VirgilCantu/shakennotstirred-rails-api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/VirgilCantu/shakennotstirred-js-frontend/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/VirgilCantu/shakennotstirred-js-frontend or https://github.com/VirgilCantu/shakennotstirred-rails-api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/VirgilCantu/shakennotstirred-js-frontend/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -20,4 +20,4 @@ The application is available as open source under the terms of the [MIT License]
 
 ## Code of Conduct
 
-Everyone interacting in the Shaken Not Stirred project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/VirgilCantu/shakennotstirred-js-frontend/CODE_OF_CONDUCT.md).
+Everyone interacting in the Shaken Not Stirred project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/VirgilCantu/shakennotstirred-js-frontend/blob/master/CODE_OF_CONDUCT.md).
