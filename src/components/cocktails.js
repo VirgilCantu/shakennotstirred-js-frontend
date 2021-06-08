@@ -60,25 +60,29 @@ class Cocktails {
       const ingLabel = document.createElement("label");
       const ingInput = document.createElement("input");
 
-      if (i === 0) {
-        ingLabel.for = "ingredient_name";
-        ingLabel.innerHTML = "Name: ";
-        ingInput.name = "ingredient_name";
-        ingInput.id = "ingredient_name";
-      } else if (i === 1) {
-        ingLabel.for = "ingredient_category";
-        ingLabel.innerHTML = "Category: ";
-        ingInput.name = "ingredient_category";
-        ingInput.id = "ingredient_category";
-      } else {
-        ingLabel.for = "ingredient_quantity";
-        ingLabel.innerHTML = "Quantity: ";
-        ingInput.name = "ingredient_quantity";
-        ingInput.id = "ingredient_quantity";
-      }
-
       ingInput.type = "text";
       ingInput.className = "new-ingredient-input";
+
+      switch (i) {
+        case 0:
+          ingLabel.for = "ingredient_name";
+          ingLabel.innerHTML = "Name: ";
+          ingInput.name = "ingredient_name";
+          ingInput.id = "ingredient_name";
+          break;
+        case 1:
+          ingLabel.for = "ingredient_category";
+          ingLabel.innerHTML = "Category: ";
+          ingInput.name = "ingredient_category";
+          ingInput.id = "ingredient_category";
+          break;
+        case 2:
+          ingLabel.for = "ingredient_quantity";
+          ingLabel.innerHTML = "Quantity: ";
+          ingInput.name = "ingredient_quantity";
+          ingInput.id = "ingredient_quantity";
+          break;
+      }
 
       this.cocktailsForm.appendChild(ingLabel);
       this.cocktailsForm.appendChild(ingInput);
