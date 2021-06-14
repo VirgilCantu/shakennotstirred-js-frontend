@@ -12,6 +12,7 @@ class Cocktails {
     this.cocktailCreateButton = document.getElementById("create-cocktail-button");
     this.ingredientCreateButton = document.getElementById("create-ingredient-button");
     this.ingredientDeleteButton = document.getElementById("delete-ingredient-button");
+    this.sortCocktailsButton = document.getElementById("sort-cocktails");
     this.cocktailsForm.style.display = "none";
     this.ingredientCreateButton.style.display = "none";
     this.ingredientDeleteButton.style.display = "none";
@@ -22,6 +23,7 @@ class Cocktails {
     this.cocktailsForm.addEventListener("submit", this.handleAddCocktail);
     this.cocktailsContainer.addEventListener("click", this.handleDeleteCocktail);
     this.ingredientDeleteButton.addEventListener("click", this.removeIngredientField);
+    this.sortCocktailsButton.addEventListener("click", this.sortCocktails);
   }
 
   fetchAndLoadCocktails() {
@@ -171,5 +173,13 @@ class Cocktails {
       this.adapter.deleteCocktail(cocktailId);
       event.target.parentElement.remove();
     }
+  };
+
+  sortCocktails = () => {
+    const cocktailCards = document.getElementById("current-cocktails");
+    cocktailCards.innerHTML = "";
+
+    const sortedCocktails = this.cocktails.sort((a, b) => (a.name > b.name ? 1 : -1));
+    sortedCocktails.forEach(cocktail => cocktail.buildCard());
   };
 }
